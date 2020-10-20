@@ -1,0 +1,23 @@
+<div>
+    <div class="row no-gutters">
+        <div class="col-md-4">
+            <img [src]="foodItem.imgSrc" class="card-img">
+        </div>
+        <div class="card-body col-md-8">
+            <h5 class="card-title">{{foodItem.name}}</h5>
+            <p class="card-text">{{foodItem.description}}</p>
+            <div class="row">
+                <p class="card-text col-sm-8">Price is {{foodItem.price}} $</p>
+                <select *ngIf="!checkout" name="number" class="custom-select col-sm-3" [(ngModel)]="count" (change)="change()">
+                    <option selected value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <p class="col-md-4" *ngIf="checkout"> ordered Number : {{ foodItem.count }}</p>
+            </div>
+        </div>
+    </div>
+</div>

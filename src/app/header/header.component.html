@@ -1,0 +1,28 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand">Taste it</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li *ngIf="!login" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="{{homeDirect()}}">Home</a></li>
+      <li *ngIf="login" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a
+          routerLink="menu">Menu</a></li>
+      <li *ngIf="login" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="checkout">Checkout</a></li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a>About</a></li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a>Contacts</a></li>
+      <li *ngIf="!login" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a
+          routerLink="signUp">sign up</a></li>
+      <li *ngIf="!login" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="login">log
+          in</a></li>
+    </ul>
+    <ul *ngIf="login" class="nav navbar-nav navbar-right">
+      <li class="dropdown" appDropdown>
+        <a style="cursor: pointer;" class="dropdown-toggle" role="button">Hi {{ loginName }} <span
+            class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a style="cursor: pointer;" (click)="signOut()">Sign out</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

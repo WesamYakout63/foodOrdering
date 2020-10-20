@@ -1,0 +1,18 @@
+.buttonRow {
+  display: flex;
+  justify-content : space-around
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid red;
+}
+
+input.ng-valid {
+  border: 1px solid #5cb85c;
+}

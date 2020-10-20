@@ -1,0 +1,59 @@
+<div>
+    <div class="jumbotron jumbotron-fluid" style="background-color: #292b2c;">
+        <font color="white">
+            <h1 class="text-center" id="header">Welcome to our restaurant</h1>
+        <h2 class="text-center" id="signup">We are glad to serve you</h2>
+        </font>
+    </div>
+</div>
+<div class="container-fluid" style="background-image:url('../../../assets/img/bg_2.jpg');">
+    <div class="col-md-6 col-md-offset-3" id="container">
+        <div class="card well">
+            <div class="card-body">
+                <h4 class="card-title text-center">Log in</h4>
+                <form [formGroup]="logInForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group">
+                        <div class="form-row">
+                            <label for="email" class="control-label">Email*</label>
+                            <input id="email" type="email" placeholder="Email Address" class="form-control" autofocus
+                                formControlName="email">
+                            <span *ngIf="!logInForm.get('email').valid && logInForm.get('email').touched"
+                                class="text-danger">Please enter a valid email address</span>
+                        </div>
+                        <br>
+                        <div class="form-row">
+                            <label for="pw" class="control-label">Password*</label>
+                            <input id="pw" type="password" formControlName="password" placeholder="Password"
+                                class="form-control" autofocus>
+                            <span class="text-danger" *ngIf="logInForm.controls['password'].hasError('hasNumber')">
+                                Must have at least 1 number!<br>
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="logInForm.controls['password'].hasError('hasCapitalCase')">
+                                Must have at least 1 capital letter!<br>
+                            </span>
+                            <span class="text-danger" *ngIf="logInForm.controls['password'].hasError('hasSmallCase')">
+                                Must have at least 1 small letter!<br>
+                            </span>
+                            <span class="text-danger" *ngIf="logInForm.controls['password'].hasError('minLength')">
+                                Password must be at least 8 characters!<br>
+                            </span>
+                            <span class="text-danger" *ngIf="logInForm.controls['password'].hasError('maxLength')">
+                                Password must be at most 12 characters!<br>
+                            </span>
+                            <span *ngIf="!logInForm.get('password').valid && logInForm.get('password').touched"
+                                class="text-danger">Please enter a password having at least a number , a capital
+                                letter and small letter with length at least 8 characters</span>
+                        </div>
+                        <br>
+                        <div class="row buttonRow">
+                            <input type="submit" value="Log in" class="btn btn-primary col-sm-5"
+                                [disabled]="!logInForm.valid">
+                            <input value="Sign Up" class="btn btn-success col-sm-5" (click)="signUp()">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

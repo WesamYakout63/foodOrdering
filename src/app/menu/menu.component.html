@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="jumbotron jumbotron-fluid" style="background-image: url('../../assets/img/bg_5.jpg');">
+        <font color="white">
+            <h1 class="text-center">Welcome to The restaurant</h1>
+            <h2 class="text-center">Food Menu</h2>
+            <h3 class="text-center">Choose what fits you to order</h3>
+        </font>
+    </div>
+
+    <app-list-item class="col-md-6" *ngFor="let item of menu; let i = index" 
+    [foodItem]="item" [index]="i" [checkout]="false"></app-list-item>
+    <button type="button" class="btn btn-primary pull-right" (click)="checkOut()">Calculate the bill</button>
+</div>
