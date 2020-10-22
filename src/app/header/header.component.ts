@@ -27,6 +27,7 @@ export class HeaderComponent implements OnInit {
     this.login = false;
     this.loginName = "";
     this.foodService.reset();
+    this.userService.loginUser = null;
     this.router.navigate(['']);
   }
 

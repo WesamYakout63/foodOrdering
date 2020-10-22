@@ -12,6 +12,11 @@ import { ListItemComponent } from './menu/list-item/list-item.component';
 import { AppRoutingModule } from './app.routing.module';
 import { DropdownDirective } from './dropdown.directive';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { AuthGuard } from './auth-gaurd.service';
+import { foodService } from './menu/food.service';
+import { userService } from './users/user.service';
+import { NonAuthGuard } from './non-auth-gaurd.service';
+import { CheckoutAuthGuard } from './checkout-auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,7 @@ import { CheckoutComponent } from './checkout/checkout.component';
     AppRoutingModule , 
     FormsModule
   ],
-  providers: [],
+  providers: [userService , foodService , AuthGuard , NonAuthGuard , CheckoutAuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

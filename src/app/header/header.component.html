@@ -4,15 +4,15 @@
       <a class="navbar-brand">Taste it</a>
     </div>
     <ul class="nav navbar-nav">
-      <li *ngIf="!login" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="{{homeDirect()}}">Home</a></li>
-      <li *ngIf="login" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="{{homeDirect()}}">Home</a></li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a
           routerLink="menu">Menu</a></li>
-      <li *ngIf="login" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="checkout">Checkout</a></li>
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="checkout">Checkout</a></li>
       <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a>About</a></li>
       <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a>Contacts</a></li>
-      <li *ngIf="!login" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a
           routerLink="signUp">sign up</a></li>
-      <li *ngIf="!login" routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="login">log
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact : true}"><a routerLink="login">log
           in</a></li>
     </ul>
     <ul *ngIf="login" class="nav navbar-nav navbar-right">

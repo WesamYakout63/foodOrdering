@@ -18,10 +18,6 @@ export class MenuComponent implements OnInit {
   }
 
   checkOut() {
-    if(this.foodService.checkout().length > 0) {
-      this.router.navigate(['checkout']);
-    } else {
-      alert('You sould order something to get checkout!!');
-    }
+  this.router.navigate(['checkout']);
   }
 }

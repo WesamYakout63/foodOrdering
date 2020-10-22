@@ -16,12 +16,13 @@ export class ListItemComponent implements OnInit {
   constructor(private foodService : foodService) { }
 
   ngOnInit(): void {
-    console.log(this.checkout);
   }
 
   change() {
     this.foodItem.count = this.count;
-    this.foodService.updateMenu(this.index , this.count);
+    if(this.foodItem.count > 0) {
+      this.foodService.updateMenu(this.index , this.count);
+    }
   }
 
 }
